@@ -104,10 +104,11 @@ console.log(bircumle);
 	*/
 	
 
-function cumlelereDonustur(/* kodlar buraya */ ){
-	/* kodlar buraya */
+function cumlelereDonustur(birlestirilecekCumleler, ayrac = ",") {
+	return birlestirilecekCumleler.map(cumle => cumle.join(ayrac));
 }
-
+	
+console.log(cumlelereDonustur(cumleler, " "));
 
 
 /* GÖREV 2:
@@ -120,9 +121,17 @@ function cumlelereDonustur(/* kodlar buraya */ ){
 			6. Oluşturulan paragraf döndürülecek
 	*/
 	
-function paragrafOlustur(/* kodlar buraya */ ){
-	/* kodlar buraya */ 
+function paragrafOlustur(cumle, cumleKurCB, cumlelereDonusturCB) {
+	let cumleDizisi = cumlelereDonusturCB(cumle, " ");
+	let anahtarlar = [1, 3, 5, 7, 9];
+	let paragraf = anahtarlar
+	.map((ayse, ind) => cumleKurCB(cumleDizisi[ayse]))
+	.join("");
+	
+	return paragraf;
 }
+
+console.log(paragrafOlustur(cumleler, cumleKur, cumlelereDonustur));
 
 
 /* 	GÖREV 3:
@@ -130,23 +139,15 @@ function paragrafOlustur(/* kodlar buraya */ ){
 			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
  */
 //3a çözümü
-/* kodlar buraya */
 
-
-
-
+console.log("3a", meyveler.pop(), meyveler.shift());
 
  
 /* 			3b.  Bir tavşan ve bir kirpi arkadaşlar sebzeler dizimizin peşine düştü. Tavşan => 🐇 , Kirpi=> 🦔 , Tavşanla kirpi sebzeleri ele geçirmek için bir plan kurdular. Tavşan diziye önden saldıracak, kirpi ise arkalarından dolaşacak. Varsayalım ki arkadaşların planları başarılı oldu. Tavşanı dizinin ilk elemanına 🐇, Kirpiyi dizinin son elemanına ekleyin 🦔 
 */
 //3b çözümü
-/* kodlar buraya */
-
-
-
-
-
-
+ 
+console.log("3b", sebzeler.unshift("🐇"), sebzeler.push("🦔"));
 
 
 /* 			3c. manav isminde bir dizi oluşturun.`meyveler` dizisi ilk elemanlara, `sebzeler` dizisi son elemanlara denk gelecek şekilde, iki diziyi birleştirip sonucu manav dizisine aktarın. (.concat metodu)
@@ -154,10 +155,8 @@ function paragrafOlustur(/* kodlar buraya */ ){
 	//3c çözümü
 /* kodlar buraya */
 
-var manav;
-
-
-
+var manav = meyveler.concat(sebzeler);
+console.log("3c", manav);
 
 
 /* 	GÖREV 4:
@@ -170,11 +169,18 @@ var manav;
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur(/* kodlar buraya */){
-/* kodlar buraya */
+function emojileriDonustur(emoCumle, emoList) {
+	
+	for (let key in emoList) {
+		emoCumle = emoCumle.replaceAll(key.toUpperCase(), emoList[key])
+		emoCumle = emoCumle.replaceAll(key, emoList[key])
+	}
+
+	return emoCumle;
 
 }
 
+console.log(emojileriDonustur("Selam :) Nasılsın :d Bugünkü olay çok komikti :P ama sonra çok şaşırdık 😱 biraz da üzüldük :( ama yine de seviliyorsun <3",emojiler));
 
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
