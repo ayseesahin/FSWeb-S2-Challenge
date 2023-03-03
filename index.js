@@ -75,19 +75,19 @@ function cumleKur(birinci, ikinci="", ucuncu="", dorduncu="", besinci=""){
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 1 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
 
-console.log(cumleKur("Hello World!"));
+console.log("örnek 1", cumleKur("Hello World!"));
 
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 2 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
 
-console.log(cumleKur("Hello ", "World!"));
+console.log("örnek 2", cumleKur("Hello ", "World!"));
 
 
 /* (Oto test var) cumleKur fonksiyonuna 5 parametre göndererek "Ben iyi bir yazılımcı olacağım!" stringini elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
 
 var bircumle = cumleKur("Ben ", "iyi ", "bir ", "yazılımcı ", "olacağım!");
 
-console.log(bircumle);
+console.log("örnek 3", bircumle);
 
 
 //		Sayfanın en üstünde global olarak tanımlanmış `cumleler` adında bir dizi bulunmaktadır. Bu dizinin içinde en çok 5 en az 1 adet string bulunan diziler bulunmaktadır. Aşağıdaki görevlerde aksi belirtilmedikçe bu dizi kullanılacaktır.
@@ -108,7 +108,7 @@ function cumlelereDonustur(birlestirilecekCumleler, ayrac = ",") {
 	return birlestirilecekCumleler.map(cumle => cumle.join(ayrac));
 }
 	
-console.log(cumlelereDonustur(cumleler, " "));
+console.log("görev 1", cumlelereDonustur(cumleler, " "));
 
 
 /* GÖREV 2:
@@ -131,7 +131,7 @@ function paragrafOlustur(cumle, cumleKurCB, cumlelereDonusturCB) {
 	return paragraf;
 }
 
-console.log(paragrafOlustur(cumleler, cumleKur, cumlelereDonustur));
+console.log("görev 2", paragrafOlustur(cumleler, cumleKur, cumlelereDonustur));
 
 
 /* 	GÖREV 3:
@@ -180,7 +180,7 @@ function emojileriDonustur(emoCumle, emoList) {
 
 }
 
-console.log(emojileriDonustur("Selam :) Nasılsın :d Bugünkü olay çok komikti :P ama sonra çok şaşırdık 😱 biraz da üzüldük :( ama yine de seviliyorsun <3",emojiler));
+console.log("görev 4", emojileriDonustur("Selam :) Nasılsın :d Bugünkü olay çok komikti :P ama sonra çok şaşırdık 😱 biraz da üzüldük :( ama yine de seviliyorsun <3",emojiler));
 
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
